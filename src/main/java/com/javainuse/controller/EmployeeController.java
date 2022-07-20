@@ -59,6 +59,15 @@ public class EmployeeController {
         emp2.setSalary(3000);
         tempEmployees.add(emp1);
         tempEmployees.add(emp2);
+
+        Employee emp3 = new Employee();
+        emp2.setName("emp2");
+        emp2.setDesignation("developer");
+        emp2.setEmpId("2");
+        emp2.setHourly(100);
+        tempEmployees.add(emp1);
+        tempEmployees.add(emp2);
+        tempEmployees.add(emp3);
         return tempEmployees;
     }
 }

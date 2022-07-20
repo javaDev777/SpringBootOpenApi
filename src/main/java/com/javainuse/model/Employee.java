@@ -7,6 +7,7 @@ public class Employee {
     private String name;
     private String designation;
     private double salary;
+    private double hourly;
 
     public Employee() {
     }
@@ -35,12 +36,25 @@ public class Employee {
         this.salary = salary;
     }
 
+    public double getHourly() {
+        return hourly;
+    }
+
+    public void setHourly(double salary) {
+        this.hourly = hourly;
+    }
     public String getEmpId() {
         return empId;
     }
 
     public void setEmpId(String empId) {
         this.empId = empId;
+    }
+
+    private String isEmployeeExempt(){
+        if (hourly!=0.0) return "No";
+        else if (salary!=0.0) return "Yes";
+        else return "non-employee";
     }
 
     @Override
@@ -81,6 +95,9 @@ public class Employee {
         } else if (!name.equals(other.name))
             return false;
         if (Double.doubleToLongBits(salary) != Double.doubleToLongBits(other.salary))
+            return false;
+
+        if (Double.doubleToLongBits(hourly) != Double.doubleToLongBits(other.hourly))
             return false;
         return true;
     }
